@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="urunsatissistemi.E_BelgeController">
+   <children>
+      <Text layoutX="574.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BELGELER">
+         <font>
+            <Font name="Segoe UI" size="19.0" />
+         </font>
+      </Text>
+      <TableView fx:id="belgeTableView" layoutX="149.0" layoutY="127.0" prefHeight="123.0" prefWidth="951.0">
+        <columns>
+          <TableColumn fx:id="belge_idColumn" prefWidth="29.0" text="İD" />
+          <TableColumn fx:id="belge_baslikColumn" prefWidth="103.0" text="BAŞLIK" />
+            <TableColumn fx:id="belge_tutarColumn" prefWidth="58.0" text="TUTAR" />
+            <TableColumn fx:id="belge_urunlerColumn" prefWidth="323.0" text="ÜRÜNLER" />
+            <TableColumn fx:id="belge_kesilenKurumColumn" prefWidth="192.0" text="KESİLEN KURUM / MÜŞTERİ" />
+            <TableColumn fx:id="belge_turuColumn" prefWidth="244.0" text="BELGE TÜRÜ" />
+        </columns>
+      </TableView>
+      <Text fill="RED" layoutX="702.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belgeyi silmek için belgeyi seçin ve SİL butonuna basın!!" />
+      <Button layoutX="803.0" layoutY="323.0" mnemonicParsing="false" onAction="#belgeSil" text="SİL" />
+      <AnchorPane layoutX="14.0" layoutY="392.0" prefHeight="250.0" prefWidth="317.0">
+         <children>
+            <Text layoutX="20.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Başlık : " />
+            <TextField fx:id="belge_baslik" layoutX="115.0" layoutY="52.0" />
+            <Text layoutX="22.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tutar : " />
+            <TextField fx:id="belge_tutar" layoutX="115.0" layoutY="94.0" />
+            <Text layoutX="25.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürünler : " />
+            <TextField fx:id="belge_urunler" layoutX="115.0" layoutY="136.0" />
+            <Text layoutX="17.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kesilen kurum : " wrappingWidth="88.5546875" />
+            <TextField fx:id="belge_kesilenK" layoutX="115.0" layoutY="169.0" />
+            <Button layoutX="137.0" layoutY="211.0" mnemonicParsing="false" onAction="#e_belge" prefHeight="25.0" prefWidth="127.0" text="BELGE OLUŞTUR" />
+            <Text layoutX="118.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belge Oluştur">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="119.0" layoutY="273.0" prefHeight="75.0" prefWidth="399.0">
+         <children>
+            <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="İşlem yapmak istediğiniz belge türü : " />
+            <ComboBox fx:id="belge_turu1" layoutX="231.0" layoutY="27.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="331.0" layoutY="397.0" prefHeight="200.0" prefWidth="338.0">
+         <children>
+            <Text layoutX="130.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belge Güncelle">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="17.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Güncellenecek belge id : " />
+            <TextField fx:id="guncellenecek_belgeID" layoutX="172.0" layoutY="52.0" />
+            <Text layoutX="11.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Güncellenecek parametre : " />
+            <ComboBox fx:id="guncellenecek_parametre" layoutX="172.0" layoutY="88.0" prefWidth="150.0" />
+            <Text layoutX="14.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Güncel Değer : " />
+            <TextField fx:id="guncelDeger" layoutX="172.0" layoutY="118.0" />
+            <Button layoutX="200.0" layoutY="154.0" mnemonicParsing="false" onAction="#belge_guncelle" text="BELGE GÜNCELLE" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="aranan_belgeTableView" layoutX="729.0" layoutY="436.0" prefHeight="123.0" prefWidth="571.0">
+         <columns>
+            <TableColumn fx:id="aranan_belge_idColumn" prefWidth="29.0" text="İD" />
+            <TableColumn fx:id="aranan_belge_baslikColumn" prefWidth="103.0" text="BAŞLIK" />
+            <TableColumn fx:id="aranan_belge_tutarColumn" prefWidth="58.0" text="TUTAR" />
+            <TableColumn fx:id="aranan_belge_urunlerColumn" prefWidth="87.0" text="ÜRÜNLER" />
+            <TableColumn fx:id="aranan_belge_kesilenKurumColumn" prefWidth="172.0" text="KESİLEN KURUM / MÜŞTERİ" />
+            <TableColumn fx:id="aranan_belge_turuColumn" prefWidth="123.0" text="BELGE TÜRÜ" />
+         </columns>
+      </TableView>
+      <Text layoutX="819.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aranacak ürün id : " />
+      <TextField fx:id="aranan_belge_id" layoutX="931.0" layoutY="573.0" />
+      <Button layoutX="977.0" layoutY="617.0" mnemonicParsing="false" onAction="#belge_ara" text="ARA" />
+   </children>
+</AnchorPane>

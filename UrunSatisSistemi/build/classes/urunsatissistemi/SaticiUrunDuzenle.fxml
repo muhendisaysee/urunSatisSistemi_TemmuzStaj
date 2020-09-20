@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="urunsatissistemi.SaticiUrunDuzenleController">
+   <children>
+      <Text layoutX="489.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ÜRÜN DÜZENLE">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="26.0" layoutY="339.0" prefHeight="279.0" prefWidth="292.0">
+         <children>
+            <Text layoutX="76.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürün Ekle">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürün Adı : " />
+            <Text layoutX="14.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürün fiyatı :" />
+            <Text layoutX="14.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürün Kategorisi :" />
+            <TextField fx:id="urun_ismi" layoutX="115.0" layoutY="63.0" />
+            <TextField fx:id="urun_fiyati" layoutX="115.0" layoutY="101.0" />
+            <ComboBox fx:id="urun_kategorisi" layoutX="114.0" layoutY="164.0" prefWidth="150.0" />
+            <Text layoutX="14.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürünün fotografı : " />
+            <TextField layoutX="115.0" layoutY="132.0" />
+            <Button layoutX="126.0" layoutY="211.0" mnemonicParsing="false" onAction="#urun_ekle" text="EKLE" />
+         </children>
+         <effect>
+            <ColorAdjust brightness="-0.29" contrast="0.1" hue="-0.14" />
+         </effect>
+      </AnchorPane>
+      <TableView fx:id="urunTableView" layoutX="229.0" layoutY="89.0" prefHeight="227.0" prefWidth="808.0">
+        <columns>
+            <TableColumn fx:id="urun_idColumn" prefWidth="120.0" text="Ürün id" />
+          <TableColumn fx:id="urun_adiColumn" prefWidth="274.0" text="Ürün İsmi" />
+          <TableColumn fx:id="urun_fiyatiColumn" prefWidth="144.0" text="Ürün Fiyatı" />
+            <TableColumn fx:id="urun_kategorisiColumn" prefWidth="267.0" text="Ürün Kategorisi" />
+        </columns>
+      </TableView>
+      <Text layoutX="520.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ÜRÜNLERİM">
+         <font>
+            <Font name="Segoe UI" size="18.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="378.0" layoutY="357.0" prefHeight="200.0" prefWidth="315.0">
+         <children>
+            <Text layoutX="85.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürün Güncelle">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Güncellenecek ürün id :" />
+            <TextField fx:id="guncellenecek_urunID" layoutX="155.0" layoutY="41.0" />
+            <Text layoutX="14.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Güncellenecek Parametre: " />
+            <ComboBox fx:id="guncellenecek_parametre" layoutX="154.0" layoutY="79.0" prefWidth="150.0" />
+            <Text layoutX="14.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Güncel Değer :" />
+            <TextField fx:id="guncelDeger" layoutX="155.0" layoutY="118.0" />
+            <Button layoutX="154.0" layoutY="161.0" mnemonicParsing="false" onAction="#urun_guncelle" text="GÜNCELLE" />
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="786.0" layoutY="377.0" prefHeight="146.0" prefWidth="332.0">
+         <children>
+            <Text layoutX="135.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ürün Sil">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Text>
+            <Button layoutX="157.0" layoutY="73.0" mnemonicParsing="false" onAction="#urun_sil" text="SİL" />
+            <Text fill="RED" layoutX="25.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Silinecek ürünü tablodan seçiniz ve sil butonuna basınız." />
+         </children>
+      </AnchorPane>
+      <Button layoutX="1259.0" layoutY="624.0" mnemonicParsing="false" onAction="#cikis" text="ÇIKIŞ" />
+      <Button layoutX="1139.0" layoutY="624.0" mnemonicParsing="false" onAction="#musteri" text="MÜŞTERİ" />
+   </children>
+</AnchorPane>
